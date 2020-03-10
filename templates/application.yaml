@@ -1,0 +1,17 @@
+{{- $values := .Values -}}
+{{- range .Values.applications }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .name }}
+spec:
+  destination:
+    namespace: {{ $values.deploymentNamespace }}
+    server: {{ $values.server }}
+  project: default
+  source:
+    path: {{ .path | default "." | quote }}
+    repoURL: {{ .url | quote }}
+    targetRevision: {{ .ref | quote }}
+{{- end }}

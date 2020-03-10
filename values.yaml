@@ -1,0 +1,13 @@
+deploymentNamespace: argo-cd
+server: https://kubernetes.default.svc
+
+applications:
+- name: omp-frontend
+  url: https://github.com/rht-labs/open-management-portal-frontend.git
+  ref: master
+- name: omp-backend
+  url: https://github.com/rht-labs/open-management-portal-backend.git
+  ref: master
+- name: git-api
+  url: https://github.com/rht-labs/open-management-portal-git-api.git
+  ref: master
