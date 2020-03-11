@@ -11,7 +11,7 @@ applications:
 - name: git-api
   url: https://github.com/rht-labs/open-management-portal-git-api.git
   ref: master
-# - name: omp-launcher
-#   url: https://github.com/redhat-cop/tool-integrations.git
-#   path: "argo-cd-bridges/gitlab/helm"
-#   ref: master
+- name: omp-launcher
+  url: https://github.com/redhat-cop/tool-integrations.git
+  path: "argo-cd-bridges/gitlab/helm"
+  ref: master
