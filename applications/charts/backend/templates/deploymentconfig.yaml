@@ -67,11 +67,3 @@ spec:
   test: false
   triggers:
   - type: ConfigChange
-  - type: ImageChange
-    imageChangeParams:
-      automatic: true
-      containerNames:
-      - {{ .Values.name }}
-      from:
-        kind: DockerImage
-        name: "{{ .Values.imageName }}:{{ .Values.imageTag }}"
