@@ -73,5 +73,5 @@ spec:
       containerNames:
       - {{ .Values.name }}
       from:
-        kind: ImageStreamTag
+        kind: DockerImage
         name: "{{ .Values.imageName }}:{{ .Values.imageTag }}"
