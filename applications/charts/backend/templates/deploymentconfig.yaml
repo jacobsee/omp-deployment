@@ -65,4 +65,13 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
   test: false
-  triggers: []
+  triggers:
+  - type: ConfigChange
+  - type: ImageChange
+    imageChangeParams:
+      automatic: true
+      containerNames:
+      - {{ .Values.name }}
+      from:
+        kind: ImageStreamTag
+        name: "{{ .Values.imageName }}:{{ .Values.imageTag }}"
